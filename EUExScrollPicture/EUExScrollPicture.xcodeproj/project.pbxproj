@@ -271,6 +271,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CONFIGURATION_BUILD_DIR = $SRCROOT/uexScrollPicture;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = uexScrollPicture;
 				SKIP_INSTALL = YES;
@@ -281,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CONFIGURATION_BUILD_DIR = $SRCROOT/uexScrollPicture;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = uexScrollPicture;
 				SKIP_INSTALL = YES;
@@ -306,6 +308,7 @@
 				C6DD59871AF2346800056243 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<uexplugins>
+    <plugin name="uexScrollPicture">
+        
+        <method name="createNewScrollPicture"></method>
+        <method name="startAutoScroll"></method>
+        <method name="stopAutoScroll"></method>
+        <method name="removeView"></method>
+        
+    </plugin>
+</uexplugins>
