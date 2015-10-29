@@ -17,10 +17,9 @@
 @property (nonatomic,assign) CGFloat PCOffsetX;
 @property (nonatomic,assign) CGFloat PCOffsetY;
 @property (nonatomic,copy) NSString *modelName;
-
+@property (nonatomic,strong)NSArray *imgUrls;
 @property (nonatomic,assign)NSInteger imageCount;
 @property (nonatomic,assign)BOOL isPaused;
-@property (nonatomic,strong) NSMutableArray *imageArray;
 @property (nonatomic,strong) UIPageControl *pageControl;
 @property (strong,nonatomic)UIScrollView *scrollView;
 

@@ -8,7 +8,7 @@
 //
 
 #import "ScrollPictureModel.h"
-
+#import "UIButton+WebCache.h"
 @implementation ScrollPictureModel
 
 -(instancetype)initScrollPictureWithName:(NSString *)name
@@ -31,10 +31,12 @@
         self.width=width;
         self.height =height;
         self.switchInterval =switchInterval;
-        self.imageArray =[NSMutableArray array];
-        [self loadImages:urls];
-        if([self.imageArray count]==0) return nil;
-        self.imageCount=[self.imageArray count];
+        self.imageCount=0;
+        self.imgUrls=urls;
+        [self checkImages:self.imgUrls];
+        if(self.imageCount == 0){
+            return nil;
+        }
         [self createScrollPicture];
         
         
@@ -52,14 +54,37 @@
 
 
 
--(void)loadImages:(NSArray *)urls{
+-(void)checkImages:(NSArray *)urls{
     for(NSString *imgUrl in urls){
-        NSData *imageData = [NSData dataWithContentsOfFile:imgUrl];
-        UIImage *img=[UIImage imageWithData:imageData];
-        if(img) [self.imageArray addObject:img];
+        if([[[imgUrl stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]lowercaseString] hasPrefix:@"http"]){
+            self.imageCount++;
 
+        }else{
+            NSData *imageData = [NSData dataWithContentsOfFile:imgUrl];
+            UIImage *img=[UIImage imageWithData:imageData];
+            if(img){
+                self.imageCount ++;
+            }
+        }
     }
-    
+}
+
+-(void)setImageForButton:(UIButton*)button byIndex:(NSInteger)index{
+    if((self.imgUrls.count-1)<index){
+        return;
+    }
+    NSString *urlString=self.imgUrls[index];
+    if([[[urlString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]lowercaseString] hasPrefix:@"http"]){
+        [button sd_setImageWithURL:[NSURL URLWithString:urlString] forState:UIControlStateNormal];
+        
+    }else{
+        NSData *imageData = [NSData dataWithContentsOfFile:urlString];
+        UIImage *img=[UIImage imageWithData:imageData];
+        if(img){
+            [button setBackgroundImage:img forState:UIControlStateNormal];
+        }
+    }
+
 }
 
 -(void)createScrollPicture{
@@ -84,36 +109,40 @@
     
     for (int i = 0;i<self.imageCount;i++)
     {
-        UIButton * imageView = [UIButton buttonWithType:UIButtonTypeCustom];
-        [imageView setFrame:CGRectMake(self.width * (i+1) ,0, self.width, self.height)];
-        [imageView setBackgroundImage:self.imageArray[i] forState:UIControlStateNormal];
-        imageView.tag = i;
+        UIButton * imageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [imageButton setFrame:CGRectMake(self.width * (i+1) ,0, self.width, self.height)];
+
+        [self setImageForButton:imageButton byIndex:i];
+        imageButton.tag = i;
         //添加点击事件
-        [imageView addTarget:self action:@selector(clickPageImage:) forControlEvents:UIControlEventTouchUpInside];
-        [self.scrollView addSubview:imageView];
+        [imageButton addTarget:self action:@selector(clickPageImage:) forControlEvents:UIControlEventTouchUpInside];
+        [self.scrollView addSubview:imageButton];
     }
 
     // 取数组最后一张图片 放在第0页
-    //UIImageView *imageView = [[UIImageView alloc] initWithImage:self.imageArray[self.imageCount-1]];
-    UIButton * lastView = [UIButton buttonWithType:UIButtonTypeCustom];
-    [lastView setBackgroundImage:self.imageArray[self.imageCount-1] forState:UIControlStateNormal];
-    [lastView setFrame:CGRectMake(0,0,self.width,self.height)];
-    lastView.tag = self.imageCount-1;// 添加最后1页在首页 循环
-    [lastView addTarget:self action:@selector(clickPageImage:) forControlEvents:UIControlEventTouchUpInside];
-    [self.scrollView addSubview:lastView];
+    UIButton * lastButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self setImageForButton:lastButton byIndex:self.imageCount-1];
+
+    [lastButton setFrame:CGRectMake(0,0,self.width,self.height)];
+    lastButton.tag = self.imageCount-1;// 添加最后1页在首页 循环
+    [lastButton addTarget:self action:@selector(clickPageImage:) forControlEvents:UIControlEventTouchUpInside];
+    [self.scrollView addSubview:lastButton];
     
     // 取数组第一张图片 放在最后一页
-    UIButton * firstView = [UIButton buttonWithType:UIButtonTypeCustom];
-    [firstView setBackgroundImage:self.imageArray[0] forState:UIControlStateNormal];
-    [firstView setFrame:CGRectMake((self.width * (self.imageCount + 1)),0, self.width,self.height)]; // 添加第1页在最后 循环
-    [firstView addTarget:self action:@selector(clickPageImage:) forControlEvents:UIControlEventTouchUpInside];
-    [self.scrollView addSubview:firstView];
+    UIButton * firstButton = [UIButton buttonWithType:UIButtonTypeCustom];
+
+    [self setImageForButton:firstButton byIndex:0];
+    [firstButton setFrame:CGRectMake((self.width * (self.imageCount + 1)),0, self.width,self.height)]; // 添加第1页在最后 循环
+    [firstButton addTarget:self action:@selector(clickPageImage:) forControlEvents:UIControlEventTouchUpInside];
+    [self.scrollView addSubview:firstButton];
     
     [self.scrollView setContentSize:CGSizeMake(self.width * (self.imageCount + 2), self.height)]; //  +上第1页和最后一页
     //[self.scrollView setContentOffset:CGPointMake(0, 0)];
-    [self.scrollView scrollRectToVisible:CGRectMake(self.width,0,self.width,self.height) animated:NO]; // 默认从序号1位置放第1页 ，序号0位置位置放第4页
+    [self.scrollView scrollRectToVisible:CGRectMake(self.width,0,self.width,self.height) animated:NO]; // 默认从序号1位置放第1页 ，序号0位置位置放第最后一页
     [self.view setFrame:CGRectMake(self.anchorX,self.anchorY,self.width,self.height)];
 }
+
+
 
 
 //点击回调
