@@ -25,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		42B9BBDE1BF576E800E744C1 /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
 		42FA30551BE1E8CB0081088E /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		42FA30561BE1E8CB0081088E /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
 		42FA30571BE1E8CB0081088E /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
@@ -46,7 +47,6 @@
 		C6DD598C1AF237A600056243 /* EBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBrowserView.h; sourceTree = "<group>"; };
 		C6DD598D1AF237A600056243 /* EUExBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBase.h; sourceTree = "<group>"; };
 		C6DD598E1AF237A600056243 /* EUExBaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBaseDefine.h; sourceTree = "<group>"; };
-		C6DD598F1AF237A600056243 /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
 		C6DD59901AF237A600056243 /* WidgetOneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetOneDelegate.h; sourceTree = "<group>"; };
 		C6DD59911AF237A600056243 /* EUExScrollPicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExScrollPicture.h; sourceTree = "<group>"; };
 		C6DD59921AF237A600056243 /* EUExScrollPicture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EUExScrollPicture.m; sourceTree = "<group>"; };
@@ -129,10 +129,10 @@
 		C6DD598B1AF237A600056243 /* engineHeader */ = {
 			isa = PBXGroup;
 			children = (
+				42B9BBDE1BF576E800E744C1 /* EUtility.h */,
 				C6DD598C1AF237A600056243 /* EBrowserView.h */,
 				C6DD598D1AF237A600056243 /* EUExBase.h */,
 				C6DD598E1AF237A600056243 /* EUExBaseDefine.h */,
-				C6DD598F1AF237A600056243 /* EUtility.h */,
 				C6DD59901AF237A600056243 /* WidgetOneDelegate.h */,
 			);
 			path = engineHeader;
@@ -312,7 +312,7 @@
 		C6DD59861AF2346800056243 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CONFIGURATION_BUILD_DIR = $SRCROOT/uexScrollPicture;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = uexScrollPicture;
@@ -323,7 +323,7 @@
 		C6DD59871AF2346800056243 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CONFIGURATION_BUILD_DIR = $SRCROOT/uexScrollPicture;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = uexScrollPicture;

@@ -7,7 +7,7 @@
 //
 
 #import "EUExScrollPicture+JsonIO.h"
-
+#import "EUtility.h"
 
 @implementation EUExScrollPicture (JsonIO)
 
@@ -59,17 +59,9 @@
     NSString *result=[dict JSONFragment];
     NSString *jsSuccessStr = [NSString stringWithFormat:@"if(uexScrollPicture.%@ != null){uexScrollPicture.%@('%@');}",name,name,result];
     
-    [self performSelectorOnMainThread:@selector(callBack:) withObject:jsSuccessStr waitUntilDone:YES];
+    [EUtility brwView:self.meBrwView evaluateScript:jsSuccessStr];
     
-}
--(void)callBack:(NSString *)str{
-    [self performSelector:@selector(delayedCallBack:) withObject:str afterDelay:0.01];
-    //[meBrwView stringByEvaluatingJavaScriptFromString:str];
-}
-
--(void)delayedCallBack:(NSString *)str{
-    [meBrwView stringByEvaluatingJavaScriptFromString:str];
-
+    
 }
 
 

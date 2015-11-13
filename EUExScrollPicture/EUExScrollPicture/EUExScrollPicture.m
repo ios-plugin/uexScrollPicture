@@ -34,13 +34,12 @@
 
 -(void)dealloc{
     [self clean];
-    [super dealloc];
+
 }
 
 -(void)clean{
 
     if(self.scrollPictures){
-        [self.scrollPictures release];
         self.scrollPictures =nil;
     }
 
@@ -151,7 +150,6 @@ var param={
     if(position == -1) return;
     ScrollPictureModel *model =self.scrollPictures[position];
     [model.view removeFromSuperview];
-    [model release];
     model = nil;
     [self.scrollPictures removeObjectAtIndex:position];
 }
