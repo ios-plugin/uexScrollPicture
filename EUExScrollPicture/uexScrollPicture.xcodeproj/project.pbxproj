@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		422897B11C1011A2002FCB0B /* Beqtucontent.h in Headers */ = {isa = PBXBuildFile; fileRef = 422897AA1C1011A2002FCB0B /* Beqtucontent.h */; };
+		422897B21C1011A2002FCB0B /* Beqtucontent.m in Sources */ = {isa = PBXBuildFile; fileRef = 422897AB1C1011A2002FCB0B /* Beqtucontent.m */; };
+		422897B31C1011A2002FCB0B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 422897AC1C1011A2002FCB0B /* Info.plist */; };
+		422897B51C1011A2002FCB0B /* PackageInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 422897AE1C1011A2002FCB0B /* PackageInfo.h */; };
+		422897B61C1011A2002FCB0B /* PackageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 422897AF1C1011A2002FCB0B /* PackageInfo.m */; };
+		422897BE1C101443002FCB0B /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 422897BD1C101443002FCB0B /* libstdc++.tbd */; };
+		422897C21C101479002FCB0B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422897C11C101479002FCB0B /* MapKit.framework */; };
+		422897C41C1019D5002FCB0B /* libAppCanEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 422897C31C1019D5002FCB0B /* libAppCanEngine.a */; };
+		422897C61C1019F9002FCB0B /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 422897C51C1019F9002FCB0B /* pop.framework */; };
+		42875B371C0EC62900339FD6 /* EUExScrollPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B9BB8E1BF572EB00E744C1 /* EUExScrollPicture.m */; };
+		42875B381C0EC62D00339FD6 /* ScrollPictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B9BB9C1BF572EB00E744C1 /* ScrollPictureModel.m */; };
+		42875B391C0EC63900339FD6 /* EUExScrollPicture+JsonIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B9BB911BF572EB00E744C1 /* EUExScrollPicture+JsonIO.m */; };
 		42B9BBAF1BF572EB00E744C1 /* EBrowserView.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BB881BF572EB00E744C1 /* EBrowserView.h */; };
 		42B9BBB01BF572EB00E744C1 /* EUExBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BB891BF572EB00E744C1 /* EUExBase.h */; };
 		42B9BBB11BF572EB00E744C1 /* EUExBaseDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BB8A1BF572EB00E744C1 /* EUExBaseDefine.h */; };
 		42B9BBB21BF572EB00E744C1 /* EUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BB8B1BF572EB00E744C1 /* EUtility.h */; };
 		42B9BBB31BF572EB00E744C1 /* WidgetOneDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BB8C1BF572EB00E744C1 /* WidgetOneDelegate.h */; };
 		42B9BBB41BF572EB00E744C1 /* EUExScrollPicture.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BB8D1BF572EB00E744C1 /* EUExScrollPicture.h */; };
-		42B9BBB51BF572EB00E744C1 /* EUExScrollPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B9BB8E1BF572EB00E744C1 /* EUExScrollPicture.m */; };
 		42B9BBB61BF572EB00E744C1 /* EUExScrollPicture+JsonIO.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BB901BF572EB00E744C1 /* EUExScrollPicture+JsonIO.h */; };
-		42B9BBB71BF572EB00E744C1 /* EUExScrollPicture+JsonIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B9BB911BF572EB00E744C1 /* EUExScrollPicture+JsonIO.m */; };
 		42B9BBB81BF572EB00E744C1 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BB931BF572EB00E744C1 /* JSON.h */; };
 		42B9BBB91BF572EB00E744C1 /* JSONParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BB941BF572EB00E744C1 /* JSONParser.h */; };
 		42B9BBBA1BF572EB00E744C1 /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BB951BF572EB00E744C1 /* NSObject+SBJSON.h */; };
@@ -25,7 +35,6 @@
 		42B9BBBE1BF572EB00E744C1 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BB991BF572EB00E744C1 /* SBJsonParser.h */; };
 		42B9BBBF1BF572EB00E744C1 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BB9A1BF572EB00E744C1 /* SBJsonWriter.h */; };
 		42B9BBC01BF572EB00E744C1 /* ScrollPictureModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BB9B1BF572EB00E744C1 /* ScrollPictureModel.h */; };
-		42B9BBC11BF572EB00E744C1 /* ScrollPictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B9BB9C1BF572EB00E744C1 /* ScrollPictureModel.m */; };
 		42B9BBC21BF572EB00E744C1 /* MKAnnotationView+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BB9E1BF572EB00E744C1 /* MKAnnotationView+WebCache.h */; };
 		42B9BBC31BF572EB00E744C1 /* NSData+ImageContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BB9F1BF572EB00E744C1 /* NSData+ImageContentType.h */; };
 		42B9BBC41BF572EB00E744C1 /* SDImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BBA01BF572EB00E744C1 /* SDImageCache.h */; };
@@ -43,8 +52,6 @@
 		42B9BBD01BF572EB00E744C1 /* UIImageView+HighlightedWebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BBAC1BF572EB00E744C1 /* UIImageView+HighlightedWebCache.h */; };
 		42B9BBD11BF572EB00E744C1 /* UIImageView+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BBAD1BF572EB00E744C1 /* UIImageView+WebCache.h */; };
 		42B9BBD21BF572EB00E744C1 /* UIView+WebCacheOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B9BBAE1BF572EB00E744C1 /* UIView+WebCacheOperation.h */; };
-		42B9BBD51BF5732B00E744C1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42B9BBD41BF5732B00E744C1 /* Info.plist */; };
-		42B9BBD71BF5734300E744C1 /* libAppCanEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B9BBD61BF5734300E744C1 /* libAppCanEngine.a */; };
 		42B9BBD91BF5735600E744C1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B9BBD81BF5735600E744C1 /* MobileCoreServices.framework */; };
 		42B9BBDB1BF5735B00E744C1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B9BBDA1BF5735B00E744C1 /* libz.tbd */; };
 		42B9BBDD1BF5736100E744C1 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B9BBDC1BF5736100E744C1 /* CFNetwork.framework */; };
@@ -55,6 +62,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		422897AA1C1011A2002FCB0B /* Beqtucontent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Beqtucontent.h; sourceTree = "<group>"; };
+		422897AB1C1011A2002FCB0B /* Beqtucontent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Beqtucontent.m; sourceTree = "<group>"; };
+		422897AC1C1011A2002FCB0B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		422897AE1C1011A2002FCB0B /* PackageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PackageInfo.h; sourceTree = "<group>"; };
+		422897AF1C1011A2002FCB0B /* PackageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PackageInfo.m; sourceTree = "<group>"; };
+		422897BD1C101443002FCB0B /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		422897C11C101479002FCB0B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		422897C31C1019D5002FCB0B /* libAppCanEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppCanEngine.a; sourceTree = "<group>"; };
+		422897C51C1019F9002FCB0B /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pop.framework; sourceTree = "<group>"; };
 		42B9BB771BF5724700E744C1 /* uexScrollPicture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = uexScrollPicture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B9BB881BF572EB00E744C1 /* EBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBrowserView.h; sourceTree = "<group>"; };
 		42B9BB891BF572EB00E744C1 /* EUExBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBase.h; sourceTree = "<group>"; };
@@ -92,18 +108,12 @@
 		42B9BBAC1BF572EB00E744C1 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
 		42B9BBAD1BF572EB00E744C1 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		42B9BBAE1BF572EB00E744C1 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
-		42B9BBD41BF5732B00E744C1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42B9BBD61BF5734300E744C1 /* libAppCanEngine.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAppCanEngine.a; sourceTree = "<group>"; };
 		42B9BBD81BF5735600E744C1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		42B9BBDA1BF5735B00E744C1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		42B9BBDC1BF5736100E744C1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		42B9BBDF1BF5781900E744C1 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		42B9BBE11BF5782000E744C1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		42B9BBE31BF5783200E744C1 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
-		42B9BBE51BF5784300E744C1 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
-		42B9BBE71BF5785400E744C1 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		42B9BBE91BF5787600E744C1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		42B9BBEB1BF578A800E744C1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		42B9BBED1BF578CF00E744C1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -112,24 +122,43 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				422897C21C101479002FCB0B /* MapKit.framework in Frameworks */,
+				422897BE1C101443002FCB0B /* libstdc++.tbd in Frameworks */,
+				422897C41C1019D5002FCB0B /* libAppCanEngine.a in Frameworks */,
 				42B9BBEE1BF578CF00E744C1 /* AudioToolbox.framework in Frameworks */,
 				42B9BBEA1BF5787600E744C1 /* SystemConfiguration.framework in Frameworks */,
 				42B9BBE21BF5782000E744C1 /* libsqlite3.tbd in Frameworks */,
 				42B9BBE01BF5781900E744C1 /* ImageIO.framework in Frameworks */,
 				42B9BBDD1BF5736100E744C1 /* CFNetwork.framework in Frameworks */,
 				42B9BBDB1BF5735B00E744C1 /* libz.tbd in Frameworks */,
+				422897C61C1019F9002FCB0B /* pop.framework in Frameworks */,
 				42B9BBD91BF5735600E744C1 /* MobileCoreServices.framework in Frameworks */,
-				42B9BBD71BF5734300E744C1 /* libAppCanEngine.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		422897A91C1011A2002FCB0B /* IDEPluginPackageSource */ = {
+			isa = PBXGroup;
+			children = (
+				422897C51C1019F9002FCB0B /* pop.framework */,
+				422897C31C1019D5002FCB0B /* libAppCanEngine.a */,
+				422897AA1C1011A2002FCB0B /* Beqtucontent.h */,
+				422897AB1C1011A2002FCB0B /* Beqtucontent.m */,
+				422897AC1C1011A2002FCB0B /* Info.plist */,
+				422897AE1C1011A2002FCB0B /* PackageInfo.h */,
+				422897AF1C1011A2002FCB0B /* PackageInfo.m */,
+			);
+			name = IDEPluginPackageSource;
+			path = ../../IDEPluginPackageSource;
+			sourceTree = "<group>";
+		};
 		42B9BB6D1BF5724700E744C1 = {
 			isa = PBXGroup;
 			children = (
-				42B9BBD31BF5731600E744C1 /* DynamicResources */,
+				422897A91C1011A2002FCB0B /* IDEPluginPackageSource */,
+				42EB9C4D1C0FDDA4009CAF8F /* frameworks */,
 				42B9BB861BF572EB00E744C1 /* EUExScrollPicture */,
 				42B9BB781BF5724700E744C1 /* Products */,
 			);
@@ -218,24 +247,20 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
-		42B9BBD31BF5731600E744C1 /* DynamicResources */ = {
+		42EB9C4D1C0FDDA4009CAF8F /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				422897C11C101479002FCB0B /* MapKit.framework */,
+				422897BD1C101443002FCB0B /* libstdc++.tbd */,
 				42B9BBED1BF578CF00E744C1 /* AudioToolbox.framework */,
-				42B9BBEB1BF578A800E744C1 /* AVFoundation.framework */,
 				42B9BBE91BF5787600E744C1 /* SystemConfiguration.framework */,
-				42B9BBE71BF5785400E744C1 /* CoreTelephony.framework */,
-				42B9BBE51BF5784300E744C1 /* libstdc++.6.0.9.tbd */,
-				42B9BBE31BF5783200E744C1 /* NetworkExtension.framework */,
 				42B9BBE11BF5782000E744C1 /* libsqlite3.tbd */,
 				42B9BBDF1BF5781900E744C1 /* ImageIO.framework */,
 				42B9BBDC1BF5736100E744C1 /* CFNetwork.framework */,
 				42B9BBDA1BF5735B00E744C1 /* libz.tbd */,
 				42B9BBD81BF5735600E744C1 /* MobileCoreServices.framework */,
-				42B9BBD61BF5734300E744C1 /* libAppCanEngine.a */,
-				42B9BBD41BF5732B00E744C1 /* Info.plist */,
 			);
-			path = DynamicResources;
+			name = frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +283,9 @@
 				42B9BBB61BF572EB00E744C1 /* EUExScrollPicture+JsonIO.h in Headers */,
 				42B9BBBC1BF572EB00E744C1 /* SBJSON.h in Headers */,
 				42B9BBC31BF572EB00E744C1 /* NSData+ImageContentType.h in Headers */,
+				422897B51C1011A2002FCB0B /* PackageInfo.h in Headers */,
 				42B9BBCC1BF572EB00E744C1 /* UIButton+WebCache.h in Headers */,
+				422897B11C1011A2002FCB0B /* Beqtucontent.h in Headers */,
 				42B9BBCF1BF572EB00E744C1 /* UIImage+WebP.h in Headers */,
 				42B9BBD01BF572EB00E744C1 /* UIImageView+HighlightedWebCache.h in Headers */,
 				42B9BBC01BF572EB00E744C1 /* ScrollPictureModel.h in Headers */,
@@ -338,7 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42B9BBD51BF5732B00E744C1 /* Info.plist in Resources */,
+				422897B31C1011A2002FCB0B /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,9 +376,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42B9BBC11BF572EB00E744C1 /* ScrollPictureModel.m in Sources */,
-				42B9BBB71BF572EB00E744C1 /* EUExScrollPicture+JsonIO.m in Sources */,
-				42B9BBB51BF572EB00E744C1 /* EUExScrollPicture.m in Sources */,
+				42875B391C0EC63900339FD6 /* EUExScrollPicture+JsonIO.m in Sources */,
+				422897B21C1011A2002FCB0B /* Beqtucontent.m in Sources */,
+				42875B381C0EC62D00339FD6 /* ScrollPictureModel.m in Sources */,
+				422897B61C1011A2002FCB0B /* PackageInfo.m in Sources */,
+				42875B371C0EC62900339FD6 /* EUExScrollPicture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -436,7 +465,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,16 +485,22 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "$(SRCROOT)/DynamicResources/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					$SRCROOT/../../IDEPluginPackageSource,
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = $SRCROOT/../../IDEPluginPackageSource;
+				INFOPLIST_FILE = "$(SRCROOT)/../../IDEPluginPackageSource/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/DynamicResources",
+					$SRCROOT/../../IDEPluginPackageSource,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zywx.uexScrollPicture;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appcan.ide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6c4af4ab-f682-4985-8609-04c6ad16648f";
+				PROVISIONING_PROFILE = "6aa2e334-3ee2-4982-a374-223f7f6e6dc7";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -474,22 +509,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: KangLi Liu (7NB75X8LDT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: KangLi Liu (7NB75X8LDT)";
 				CONFIGURATION_BUILD_DIR = $SRCROOT/uexScrollPicture/IDE/;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "$(SRCROOT)/DynamicResources/Info.plist";
+				FRAMEWORK_SEARCH_PATHS = (
+					$SRCROOT/../../IDEPluginPackageSource,
+					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = $SRCROOT/../../IDEPluginPackageSource;
+				INFOPLIST_FILE = "$(SRCROOT)/../../IDEPluginPackageSource/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/DynamicResources",
+					$SRCROOT/../../IDEPluginPackageSource,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zywx.uexScrollPicture;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appcan.ide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6c4af4ab-f682-4985-8609-04c6ad16648f";
+				PROVISIONING_PROFILE = "6aa2e334-3ee2-4982-a374-223f7f6e6dc7";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

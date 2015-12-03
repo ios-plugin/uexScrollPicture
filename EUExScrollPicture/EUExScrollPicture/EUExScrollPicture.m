@@ -97,10 +97,14 @@ var param={
                                                                                width:width
                                                                              imgUrls:imgurls];
     
+    if(model){
+        [meBrwView.mScrollView addSubview:model.view];
+        [self.scrollPictures addObject:model];
+    }
     
-   [meBrwView.mScrollView addSubview:model.view];
+   
     //[EUtility brwView:meBrwView addSubview:model.view];
-    [self.scrollPictures addObject:model];
+
 }
 /*
 startAutoScroll(param);
