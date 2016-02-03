@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "EUExBase.h"
-#import "ScrollPictureModel.h"
+
 
 @interface EUExScrollPicture : EUExBase
 
+ 
 @end

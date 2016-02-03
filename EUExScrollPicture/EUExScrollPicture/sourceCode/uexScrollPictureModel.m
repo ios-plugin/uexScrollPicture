@@ -7,9 +7,10 @@
 //  Copyright (c) 2015年 zywx. All rights reserved.
 //
 
-#import "ScrollPictureModel.h"
+#import "uexScrollPictureModel.h"
 #import "UIButton+WebCache.h"
-@implementation ScrollPictureModel
+#import "EUExScrollPicture.h"
+@implementation uexScrollPictureModel
 
 -(instancetype)initScrollPictureWithName:(NSString *)name
                           switchInterval:(CGFloat)switchInterval
@@ -19,36 +20,31 @@
                       pageControlOffsetY:(CGFloat)PCOffsetY
                                   height:(CGFloat)height
                                    width:(CGFloat)width
-                                 imgUrls:(NSArray *)urls{
+                                 imgUrls:(NSArray *)urls
+                                delegate:(id<uexScrollPictureModelDelegate>)delegate{
     self=[super init];
     if(self){
-        self.isPaused = NO;
-        self.modelName = name;
-        self.anchorX = anchorX;
-        self.anchorY = anchorY;
-        self.PCOffsetX=PCOffsetX;
-        self.PCOffsetY=PCOffsetY;
-        self.width=width;
-        self.height =height;
-        self.switchInterval =switchInterval;
-        self.imageCount=0;
-        self.imgUrls=urls;
+        _isPaused       = NO;
+        _modelName      = name;
+        _anchorX        = anchorX;
+        _anchorY        = anchorY;
+        _PCOffsetX      = PCOffsetX;
+        _PCOffsetY      = PCOffsetY;
+        _width          = width;
+        _height         = height;
+        _switchInterval = switchInterval;
+        _imageCount     = 0;
+        _imgUrls        = urls;
+        _delegate       = delegate;
+        
         [self checkImages:self.imgUrls];
         if(self.imageCount == 0){
             return nil;
         }
         [self createScrollPicture];
-        
-        
-        
-        
-        
-        
         return self;
     }
-    
-    
-    
+
     return nil;
 }
 
@@ -60,8 +56,7 @@
             self.imageCount++;
 
         }else{
-            NSData *imageData = [NSData dataWithContentsOfFile:imgUrl];
-            UIImage *img=[UIImage imageWithData:imageData];
+            UIImage *img=[UIImage imageWithContentsOfFile:imgUrl];
             if(img){
                 self.imageCount ++;
             }
@@ -150,7 +145,10 @@
     NSMutableDictionary *result = [NSMutableDictionary dictionary];
     [result setValue:[NSString stringWithFormat:@"%ld",(long)sender.tag] forKey:@"index"];
     [result setValue:self.modelName forKey:@"viewId"];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"onPicItemClick" object:nil userInfo:result];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(scrollPictureModelDidClickWithInfo:)]) {
+        [self.delegate scrollPictureModelDidClickWithInfo:result];
+    }
+    //[[NSNotificationCenter defaultCenter] postNotificationName:@"onPicItemClick" object:nil userInfo:result];
    // NSLog(@"click button tag is %d",sender.tag);
    
 }

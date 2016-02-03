@@ -9,9 +9,11 @@
 #import "EUExScrollPicture.h"
 #import "EUExScrollPicture+JsonIO.h"
 #import "EBrowserView.h"
-@interface EUExScrollPicture()
+#import "EUtility.h"
+#import "uexScrollPictureModel.h"
+@interface EUExScrollPicture()<uexScrollPictureModelDelegate>
 
-@property (nonatomic,strong) NSMutableArray *scrollPictures;
+@property (nonatomic,strong) NSMutableArray<uexScrollPictureModel *> *scrollPictures;
 @end
 
 
@@ -21,29 +23,19 @@
     if (self = [super initWithBrwView:eInBrwView]) {
 
         self.scrollPictures =[NSMutableArray array];
-        
-        [[NSNotificationCenter defaultCenter] addObserver: self
-                                                 selector: @selector(onScrollPictureModelClick:)
-                                                     name: @"onPicItemClick"
-                                                   object: nil];
-        
-
     }
     return self;
 }
 
 -(void)dealloc{
     [self clean];
-    [super dealloc];
 }
 
 -(void)clean{
-
-    if(self.scrollPictures){
-        [self.scrollPictures release];
-        self.scrollPictures =nil;
+    for (uexScrollPictureModel *model in self.scrollPictures) {
+        [model.view removeFromSuperview];
     }
-
+    [self.scrollPictures removeAllObjects];
 }
 
 /*
@@ -60,7 +52,7 @@ var param={
 */
 
 -(void)createNewScrollPicture:(NSMutableArray *)array{
-    id info = [self getDataFromJson:array[0]];
+    id info = [self getDataFromJSON:array[0]];
     CGFloat switchInterval,anchorX,anchorY,height,width;
     NSString *viewId = [info objectForKey:@"viewId"];
     if([info objectForKey:@"interval"]){
@@ -87,19 +79,20 @@ var param={
         PCOffsetX =[offset[0] floatValue];
         PCOffsetY =[offset[1] floatValue];
     }
-
-    ScrollPictureModel *model =[[ScrollPictureModel alloc] initScrollPictureWithName:viewId
-                                                                      switchInterval:switchInterval
-                                                                             anchorX:anchorX
-                                                                             anchorY:anchorY
-                                                                  pageControlOffsetX:PCOffsetX
-                                                                  pageControlOffsetY:PCOffsetY
-                                                                              height:height
-                                                                               width:width
-                                                                             imgUrls:imgurls];
+    
+    uexScrollPictureModel *model =[[uexScrollPictureModel alloc] initScrollPictureWithName:viewId
+                                                                            switchInterval:switchInterval
+                                                                                   anchorX:anchorX
+                                                                                   anchorY:anchorY
+                                                                        pageControlOffsetX:PCOffsetX
+                                                                        pageControlOffsetY:PCOffsetY
+                                                                                    height:height
+                                                                                     width:width
+                                                                                   imgUrls:imgurls
+                                                                                  delegate:self];
     
     
-   [meBrwView.mScrollView addSubview:model.view];
+   [EUtility brwView:self.meBrwView addSubviewToScrollView:model.view];
     //[EUtility brwView:meBrwView addSubview:model.view];
     [self.scrollPictures addObject:model];
 }
@@ -116,10 +109,10 @@ var param={
  };
 */
 -(NSInteger)searchModelById:(NSMutableArray *)array{
-    id info = [self getDataFromJson:array[0]];
+    id info = [self getDataFromJSON:array[0]];
     NSString *viewId =[info objectForKey:@"viewId"];
     for(int i=0;i<[self.scrollPictures count];i++){
-        ScrollPictureModel *model = self.scrollPictures[i];
+        uexScrollPictureModel *model = self.scrollPictures[i];
         if([model.modelName isEqualToString:viewId]) return i;
     }
 
@@ -131,13 +124,13 @@ var param={
 -(void) startAutoScroll:(NSMutableArray *)array{
     NSInteger position = [self searchModelById:array];
     if(position == -1) return;
-    ScrollPictureModel *model =self.scrollPictures[position];
+    uexScrollPictureModel *model =self.scrollPictures[position];
     model.isPaused =NO;
 }
 -(void) stopAutoScroll:(NSMutableArray *)array{
     NSInteger position = [self searchModelById:array];
     if(position == -1) return;
-    ScrollPictureModel *model =self.scrollPictures[position];
+    uexScrollPictureModel *model =self.scrollPictures[position];
     model.isPaused =YES;
 }
 /*
@@ -149,15 +142,13 @@ var param={
 -(void) removeView:(NSMutableArray *)array{
     NSInteger position = [self searchModelById:array];
     if(position == -1) return;
-    ScrollPictureModel *model =self.scrollPictures[position];
+    uexScrollPictureModel *model =self.scrollPictures[position];
     [model.view removeFromSuperview];
-    [model release];
     model = nil;
     [self.scrollPictures removeObjectAtIndex:position];
 }
--(void)onScrollPictureModelClick:(NSNotification *)result{
-    id dict=result.userInfo;
-    [self returnJSonWithName:@"onPicItemClick" object:dict];
+-(void)scrollPictureModelDidClickWithInfo:(NSDictionary *)info{
+    [self returnJSONWithName:@"onPicItemClick" object:info];
     
 }
 

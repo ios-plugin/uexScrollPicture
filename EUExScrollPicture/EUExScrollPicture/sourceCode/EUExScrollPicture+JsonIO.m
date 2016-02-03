@@ -7,32 +7,24 @@
 //
 
 #import "EUExScrollPicture+JsonIO.h"
-
+#import "EUtility.h"
 
 @implementation EUExScrollPicture (JsonIO)
 
 
 //从json字符串中获取数据
-- (id)getDataFromJson:(NSString *)jsonData{
+- (id)getDataFromJSON:(NSString *)jsonString{
     NSError *error = nil;
-    
-    
-    
-    NSData *jsonData2= [jsonData dataUsingEncoding:NSUTF8StringEncoding];
-    
-    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData2
-                     
+    NSData *jsonData= [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData
                                                     options:NSJSONReadingMutableContainers
-                     
                                                       error:&error];
-    
     if (jsonObject != nil && error == nil){
         
         return jsonObject;
     }else{
-        
         // 解析錯誤
-        
         return nil;
     }
     
@@ -42,35 +34,12 @@
  回调方法name(data)
  
  */
--(void) returnJSonWithName:(NSString *)name object:(id)dict{
-    /*
-     
-     
-     
-     if([NSJSONSerialization isValidJSONObject:dict]){
-     NSError *error;
-     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict
-     options:NSJSONWritingPrettyPrinted
-     error:&error
-     ];
-     
-     NSString *result = [[NSString alloc] initWithData:jsonData  encoding:NSUTF8StringEncoding];
-     */
+-(void) returnJSONWithName:(NSString *)name object:(id)dict{
     NSString *result=[dict JSONFragment];
     NSString *jsSuccessStr = [NSString stringWithFormat:@"if(uexScrollPicture.%@ != null){uexScrollPicture.%@('%@');}",name,name,result];
-    
-    [self performSelectorOnMainThread:@selector(callBack:) withObject:jsSuccessStr waitUntilDone:YES];
-    
-}
--(void)callBack:(NSString *)str{
-    [self performSelector:@selector(delayedCallBack:) withObject:str afterDelay:0.01];
-    //[meBrwView stringByEvaluatingJavaScriptFromString:str];
+    [EUtility brwView:self.meBrwView evaluateScript:jsSuccessStr];
 }
 
--(void)delayedCallBack:(NSString *)str{
-    [meBrwView stringByEvaluatingJavaScriptFromString:str];
-
-}
 
 
 

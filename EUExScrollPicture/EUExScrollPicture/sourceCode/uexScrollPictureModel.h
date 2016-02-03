@@ -1,5 +1,5 @@
 //
-//  ScrollPictureModel.h
+//  uexScrollPictureModel.h
 //  AppCanPlugin
 //
 //  Created by AppCan on 15/4/28.
@@ -8,7 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "EUExScrollPicture.h"
-@interface ScrollPictureModel :UIViewController<UIScrollViewDelegate>
+
+@protocol uexScrollPictureModelDelegate <NSObject>
+-(void)scrollPictureModelDidClickWithInfo:(NSDictionary *)info;
+@end
+
+
+@interface uexScrollPictureModel :UIViewController<UIScrollViewDelegate>
 @property (nonatomic,assign) CGFloat switchInterval;
 @property (nonatomic,assign) CGFloat anchorX;
 @property (nonatomic,assign) CGFloat anchorY;
@@ -22,7 +28,7 @@
 @property (nonatomic,assign)BOOL isPaused;
 @property (nonatomic,strong) UIPageControl *pageControl;
 @property (strong,nonatomic)UIScrollView *scrollView;
-
+@property (nonatomic,weak)id<uexScrollPictureModelDelegate> delegate;
 -(instancetype)initScrollPictureWithName:(NSString *)name
                           switchInterval:(CGFloat)switchInterval
                                  anchorX:(CGFloat)anchorX
@@ -31,11 +37,12 @@
                       pageControlOffsetY:(CGFloat)PCOffsetY
                                   height:(CGFloat)height
                                    width:(CGFloat)width
-                                 imgUrls:(NSArray*)urls;
+                                 imgUrls:(NSArray*)urls
+                                delegate:(id<uexScrollPictureModelDelegate>)delegate;
 
 
 
--(void)loadImages:(NSArray *)urls;
+
 
 
 @end

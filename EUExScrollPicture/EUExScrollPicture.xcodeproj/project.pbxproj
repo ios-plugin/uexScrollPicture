@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C6DD59A11AF237A700056243 /* EUExScrollPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DD59921AF237A600056243 /* EUExScrollPicture.m */; };
 		C6DD59A21AF237A700056243 /* EUExScrollPicture+JsonIO.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DD59951AF237A700056243 /* EUExScrollPicture+JsonIO.m */; };
-		C6DD59A31AF237A700056243 /* ScrollPictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DD59A01AF237A700056243 /* ScrollPictureModel.m */; };
+		C6DD59A31AF237A700056243 /* uexScrollPictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DD59A01AF237A700056243 /* uexScrollPictureModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,8 +60,8 @@
 		C6DD599C1AF237A700056243 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
 		C6DD599D1AF237A700056243 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
 		C6DD599E1AF237A700056243 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		C6DD599F1AF237A700056243 /* ScrollPictureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollPictureModel.h; sourceTree = "<group>"; };
-		C6DD59A01AF237A700056243 /* ScrollPictureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollPictureModel.m; sourceTree = "<group>"; };
+		C6DD599F1AF237A700056243 /* uexScrollPictureModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uexScrollPictureModel.h; sourceTree = "<group>"; };
+		C6DD59A01AF237A700056243 /* uexScrollPictureModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = uexScrollPictureModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +145,8 @@
 				C6DD59941AF237A700056243 /* EUExScrollPicture+JsonIO.h */,
 				C6DD59951AF237A700056243 /* EUExScrollPicture+JsonIO.m */,
 				C6DD59961AF237A700056243 /* JSON */,
-				C6DD599F1AF237A700056243 /* ScrollPictureModel.h */,
-				C6DD59A01AF237A700056243 /* ScrollPictureModel.m */,
+				C6DD599F1AF237A700056243 /* uexScrollPictureModel.h */,
+				C6DD59A01AF237A700056243 /* uexScrollPictureModel.m */,
 			);
 			path = sourceCode;
 			sourceTree = "<group>";
@@ -192,7 +192,7 @@
 		C6DD59691AF2346800056243 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = AppCan;
 				TargetAttributes = {
 					C6DD59701AF2346800056243 = {
@@ -222,7 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6DD59A31AF237A700056243 /* ScrollPictureModel.m in Sources */,
+				C6DD59A31AF237A700056243 /* uexScrollPictureModel.m in Sources */,
 				C6DD59A21AF237A700056243 /* EUExScrollPicture+JsonIO.m in Sources */,
 				C6DD59A11AF237A700056243 /* EUExScrollPicture.m in Sources */,
 			);
@@ -251,6 +251,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -266,7 +267,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -302,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -312,7 +313,7 @@
 		C6DD59861AF2346800056243 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CONFIGURATION_BUILD_DIR = $SRCROOT/uexScrollPicture;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = uexScrollPicture;
@@ -323,7 +324,7 @@
 		C6DD59871AF2346800056243 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CONFIGURATION_BUILD_DIR = $SRCROOT/uexScrollPicture;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = uexScrollPicture;

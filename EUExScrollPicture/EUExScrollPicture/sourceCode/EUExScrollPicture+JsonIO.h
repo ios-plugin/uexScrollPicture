@@ -10,8 +10,8 @@
 #import "JSON.h"
 
 @interface EUExScrollPicture (JsonIO)
--(void) returnJSonWithName:(NSString *)name object:(id)dict;
-- (id)  getDataFromJson:(NSString *)jsonData;
+-(void) returnJSONWithName:(NSString *)name object:(id)dict;
+- (id)  getDataFromJSON:(NSString *)jsonString;
 @end
 
 
