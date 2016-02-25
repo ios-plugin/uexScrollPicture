@@ -83,6 +83,7 @@
 }
 
 -(void)createScrollPicture{
+    self.isPaused=YES; //不自动轮播
     [NSTimer scheduledTimerWithTimeInterval:self.switchInterval target:self selector:@selector(runTimePage) userInfo:nil repeats:YES];
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0,0,self.width,self.height)];
     self.scrollView.bounces = YES;
@@ -95,8 +96,8 @@
 
     
     self.pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(self.PCOffsetX+self.width*0.5,self.PCOffsetY+ self.height-20,self.imageCount*10,10)]; // 初始化mypagecontrol
-    [self.pageControl setCurrentPageIndicatorTintColor:[UIColor redColor]];
-    [self.pageControl setPageIndicatorTintColor:[UIColor blackColor]];
+    [self.pageControl setCurrentPageIndicatorTintColor:[UIColor whiteColor]];
+    [self.pageControl setPageIndicatorTintColor:[UIColor colorWithWhite:1 alpha:0.5]];
     self.pageControl.numberOfPages = self.imageCount;
     self.pageControl.currentPage = 0;
     [self.pageControl addTarget:self action:@selector(turnPage) forControlEvents:UIControlEventValueChanged]; // 触摸mypagecontrol触发change这个方法事件
@@ -171,11 +172,8 @@
 // pagecontrol 选择器的方法
 - (void)turnPage
 {
-    
-        NSInteger page = self.pageControl.currentPage; // 获取当前的page
-        [self.scrollView scrollRectToVisible:CGRectMake(self.width*(page+1),0,self.width,self.height) animated:NO]; // 触摸pagecontroller那个点点 往后翻一页 +1
-    
-  
+    NSInteger page = self.pageControl.currentPage; // 获取当前的page
+    [self.scrollView scrollRectToVisible:CGRectMake(self.width*(page+1),0,self.width,self.height) animated:NO]; // 触摸pagecontroller那个点点 往后翻一页 +1
 }
 // 定时器 绑定的方法
 - (void)runTimePage
@@ -188,5 +186,11 @@
         [self turnPage];
     }
 }
-
+// scrollview 委托函数
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat pagewidth = self.scrollView.frame.size.width;
+    int page = floor((self.scrollView.contentOffset.x - pagewidth/ (self.imageCount+2)) / pagewidth);
+    page = page > (self.imageCount-1) ? 0 : page ;
+    self.pageControl.currentPage = page;
+}
 @end
