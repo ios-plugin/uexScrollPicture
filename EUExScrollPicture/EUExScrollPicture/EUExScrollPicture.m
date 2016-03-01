@@ -113,7 +113,7 @@ var param={
     NSString *viewId =[info objectForKey:@"viewId"];
     for(int i=0;i<[self.scrollPictures count];i++){
         uexScrollPictureModel *model = self.scrollPictures[i];
-        if([model.modelName isEqualToString:viewId]) return i;
+        if([model.modelName isEqual:viewId]) return i;
     }
 
     return -1;
