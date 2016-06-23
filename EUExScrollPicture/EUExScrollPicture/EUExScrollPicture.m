@@ -19,14 +19,20 @@
 
 @implementation EUExScrollPicture
 
--(id)initWithBrwView:(EBrowserView *) eInBrwView{
-    if (self = [super initWithBrwView:eInBrwView]) {
-
+//-(id)initWithBrwView:(EBrowserView *) eInBrwView{
+//    if (self = [super initWithBrwView:eInBrwView]) {
+//
+//        self.scrollPictures =[NSMutableArray array];
+//    }
+//    return self;
+//}
+-(id)initWithWebViewEngine:(id<AppCanWebViewEngineObject>)engine{
+    if (self = [super initWithWebViewEngine:engine]) {
+        
         self.scrollPictures =[NSMutableArray array];
     }
     return self;
 }
-
 -(void)dealloc{
     [self clean];
 }
@@ -92,7 +98,8 @@ var param={
                                                                                   delegate:self];
     
     
-   [EUtility brwView:self.meBrwView addSubviewToScrollView:model.view];
+   //[EUtility brwView:self.meBrwView addSubviewToScrollView:model.view];
+   [[self.webViewEngine webScrollView] addSubview:model.view];
     //[EUtility brwView:meBrwView addSubview:model.view];
     [self.scrollPictures addObject:model];
 }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <uexplugins>
     <plugin
-        uexName="uexScrollPicture" version="3.0.4" build="4">
-        <info>4:修复手滑动的时候下面轮播点不变的bug;修改为不自动轮播、轮播点颜色</info>
+        uexName="uexScrollPicture" version="4.0.0" build="5">
+        <info>5:支持引擎4.0，函数入参</info>
+        <build>4:修复手滑动的时候下面轮播点不变的bug;修改为不自动轮播、轮播点颜色</build>
         <build>3:修复回调可能会被错误触发的bug</build>
         <build>2:添加IDE支持</build>
         <build>1:图片支持网络路径</build>
