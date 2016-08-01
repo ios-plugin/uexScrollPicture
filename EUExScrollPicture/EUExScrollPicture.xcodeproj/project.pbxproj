@@ -320,6 +320,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EUExScrollPicture/sourceCode",
+					"$(PROJECT_DIR)/EUExScrollPicture",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = uexScrollPicture;
@@ -335,6 +336,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EUExScrollPicture/sourceCode",
+					"$(PROJECT_DIR)/EUExScrollPicture",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = uexScrollPicture;

@@ -57,10 +57,16 @@ var param={
 };
 */
 
--(void)createNewScrollPicture:(NSMutableArray *)array{
+-(NSString *)createNewScrollPicture:(NSMutableArray *)array{
     id info = [self getDataFromJSON:array[0]];
     CGFloat switchInterval,anchorX,anchorY,height,width;
-    NSString *viewId = [info objectForKey:@"viewId"];
+    NSString *viewId;
+    if(![info objectForKey:@"viewId"] || [[info objectForKey:@"viewId"] isEqual:@""]){
+        viewId=[NSString stringWithFormat:@"%d",arc4random()%10000];
+    }
+    else{
+        viewId = [info objectForKey:@"viewId"];
+    }
     if([info objectForKey:@"interval"]){
         switchInterval =[[info objectForKey:@"interval"] floatValue]/1000;
     }else{
@@ -102,6 +108,8 @@ var param={
    [[self.webViewEngine webScrollView] addSubview:model.view];
     //[EUtility brwView:meBrwView addSubview:model.view];
     [self.scrollPictures addObject:model];
+    
+    return viewId;
 }
 /*
 startAutoScroll(param);
