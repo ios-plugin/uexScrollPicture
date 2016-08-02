@@ -125,7 +125,17 @@ var param={
 */
 -(NSInteger)searchModelById:(NSMutableArray *)array{
     id info = [self getDataFromJSON:array[0]];
-    NSString *viewId =[info objectForKey:@"viewId"];
+    NSString *viewId;
+    if([info objectForKey:@"viewId"] && ![[info objectForKey:@"viewId"] isEqual:@""]){
+        viewId=[info objectForKey:@"viewId"];
+    }
+    else if([info objectForKey:@"view"] && ![[info objectForKey:@"view"] isEqual:@""]){
+        viewId=[info objectForKey:@"view"];
+    }
+    else{
+        return -1;
+    }
+    
     for(int i=0;i<[self.scrollPictures count];i++){
         uexScrollPictureModel *model = self.scrollPictures[i];
         if([model.modelName isEqual:viewId]) return i;
