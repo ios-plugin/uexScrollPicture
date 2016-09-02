@@ -95,7 +95,7 @@
     
 
     
-    self.pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(self.PCOffsetX+self.width*0.5,self.PCOffsetY+ self.height-20,self.imageCount*10,10)]; // 初始化mypagecontrol
+    self.pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(self.PCOffsetX+self.width*0.5-self.imageCount*5,self.PCOffsetY+ self.height-20,self.imageCount*10,10)]; // 初始化mypagecontrol
     [self.pageControl setCurrentPageIndicatorTintColor:[UIColor whiteColor]];
     [self.pageControl setPageIndicatorTintColor:[UIColor colorWithWhite:1 alpha:0.5]];
     self.pageControl.numberOfPages = self.imageCount;
