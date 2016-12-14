@@ -35,9 +35,11 @@
  
  */
 -(void) returnJSONWithName:(NSString *)name object:(id)dict{
-    NSString *result=[dict JSONFragment];
-    NSString *jsSuccessStr = [NSString stringWithFormat:@"if(uexScrollPicture.%@ != null){uexScrollPicture.%@('%@');}",name,name,result];
-    [EUtility brwView:self.meBrwView evaluateScript:jsSuccessStr];
+    NSString *result=[dict ac_JSONFragment];
+    //NSString *jsSuccessStr = [NSString stringWithFormat:@"if(uexScrollPicture.%@ != null){uexScrollPicture.%@('%@');}",name,name,result];
+    //[EUtility brwView:self.meBrwView evaluateScript:jsSuccessStr];
+     NSString *keyPath = [NSString stringWithFormat:@"uexScrollPicture.%@",name];
+    [self.webViewEngine callbackWithFunctionKeyPath:keyPath arguments:ACArgsPack(result)];
 }
 
 

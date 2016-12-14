@@ -19,14 +19,20 @@
 
 @implementation EUExScrollPicture
 
--(id)initWithBrwView:(EBrowserView *) eInBrwView{
-    if (self = [super initWithBrwView:eInBrwView]) {
-
+//-(id)initWithBrwView:(EBrowserView *) eInBrwView{
+//    if (self = [super initWithBrwView:eInBrwView]) {
+//
+//        self.scrollPictures =[NSMutableArray array];
+//    }
+//    return self;
+//}
+-(id)initWithWebViewEngine:(id<AppCanWebViewEngineObject>)engine{
+    if (self = [super initWithWebViewEngine:engine]) {
+        
         self.scrollPictures =[NSMutableArray array];
     }
     return self;
 }
-
 -(void)dealloc{
     [self clean];
 }
@@ -51,10 +57,16 @@ var param={
 };
 */
 
--(void)createNewScrollPicture:(NSMutableArray *)array{
+-(NSString *)createNewScrollPicture:(NSMutableArray *)array{
     id info = [self getDataFromJSON:array[0]];
     CGFloat switchInterval,anchorX,anchorY,height,width;
-    NSString *viewId = [info objectForKey:@"viewId"];
+    NSString *viewId;
+    if(![info objectForKey:@"viewId"] || [[info objectForKey:@"viewId"] isEqual:@""]){
+        viewId=[NSString stringWithFormat:@"%d",arc4random()%10000];
+    }
+    else{
+        viewId = [info objectForKey:@"viewId"];
+    }
     if([info objectForKey:@"interval"]){
         switchInterval =[[info objectForKey:@"interval"] floatValue]/1000;
     }else{
@@ -92,9 +104,12 @@ var param={
                                                                                   delegate:self];
     
     
-   [EUtility brwView:self.meBrwView addSubviewToScrollView:model.view];
+   //[EUtility brwView:self.meBrwView addSubviewToScrollView:model.view];
+   [[self.webViewEngine webScrollView] addSubview:model.view];
     //[EUtility brwView:meBrwView addSubview:model.view];
     [self.scrollPictures addObject:model];
+    
+    return viewId;
 }
 /*
 startAutoScroll(param);
@@ -110,7 +125,17 @@ var param={
 */
 -(NSInteger)searchModelById:(NSMutableArray *)array{
     id info = [self getDataFromJSON:array[0]];
-    NSString *viewId =[info objectForKey:@"viewId"];
+    NSString *viewId;
+    if([info objectForKey:@"viewId"] && ![[info objectForKey:@"viewId"] isEqual:@""]){
+        viewId=[info objectForKey:@"viewId"];
+    }
+    else if([info objectForKey:@"view"] && ![[info objectForKey:@"view"] isEqual:@""]){
+        viewId=[info objectForKey:@"view"];
+    }
+    else{
+        return -1;
+    }
+    
     for(int i=0;i<[self.scrollPictures count];i++){
         uexScrollPictureModel *model = self.scrollPictures[i];
         if([model.modelName isEqual:viewId]) return i;

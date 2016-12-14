@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21563E811D1B8F180027816B /* AppCanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21563E801D1B8F180027816B /* AppCanKit.framework */; };
 		C6DD59A11AF237A700056243 /* EUExScrollPicture.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DD59921AF237A600056243 /* EUExScrollPicture.m */; };
 		C6DD59A21AF237A700056243 /* EUExScrollPicture+JsonIO.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DD59951AF237A700056243 /* EUExScrollPicture+JsonIO.m */; };
 		C6DD59A31AF237A700056243 /* uexScrollPictureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C6DD59A01AF237A700056243 /* uexScrollPictureModel.m */; };
@@ -25,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		21563E801D1B8F180027816B /* AppCanKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCanKit.framework; sourceTree = "<group>"; };
 		42FA30551BE1E8CB0081088E /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		42FA30561BE1E8CB0081088E /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
 		42FA30571BE1E8CB0081088E /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
@@ -44,7 +46,6 @@
 		42FA30651BE1E8CB0081088E /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		C6DD59711AF2346800056243 /* libuexScrollPicture.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libuexScrollPicture.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6DD598C1AF237A600056243 /* EBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EBrowserView.h; sourceTree = "<group>"; };
-		C6DD598D1AF237A600056243 /* EUExBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBase.h; sourceTree = "<group>"; };
 		C6DD598E1AF237A600056243 /* EUExBaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBaseDefine.h; sourceTree = "<group>"; };
 		C6DD598F1AF237A600056243 /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
 		C6DD59901AF237A600056243 /* WidgetOneDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetOneDelegate.h; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21563E811D1B8F180027816B /* AppCanKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				C6DD598C1AF237A600056243 /* EBrowserView.h */,
-				C6DD598D1AF237A600056243 /* EUExBase.h */,
 				C6DD598E1AF237A600056243 /* EUExBaseDefine.h */,
 				C6DD598F1AF237A600056243 /* EUtility.h */,
 				C6DD59901AF237A600056243 /* WidgetOneDelegate.h */,
@@ -141,6 +142,7 @@
 		C6DD59931AF237A600056243 /* sourceCode */ = {
 			isa = PBXGroup;
 			children = (
+				21563E801D1B8F180027816B /* AppCanKit.framework */,
 				42FA30541BE1E8CB0081088E /* SDWebImage */,
 				C6DD59941AF237A700056243 /* EUExScrollPicture+JsonIO.h */,
 				C6DD59951AF237A700056243 /* EUExScrollPicture+JsonIO.m */,
@@ -315,6 +317,11 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CONFIGURATION_BUILD_DIR = $SRCROOT/uexScrollPicture;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EUExScrollPicture/sourceCode",
+					"$(PROJECT_DIR)/EUExScrollPicture",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = uexScrollPicture;
 				SKIP_INSTALL = YES;
@@ -326,6 +333,11 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CONFIGURATION_BUILD_DIR = $SRCROOT/uexScrollPicture;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EUExScrollPicture/sourceCode",
+					"$(PROJECT_DIR)/EUExScrollPicture",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = uexScrollPicture;
 				SKIP_INSTALL = YES;
